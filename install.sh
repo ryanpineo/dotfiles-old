@@ -23,3 +23,5 @@ ln -sfT $dots/zsh/zshrc ~/.zshrc
 ln -sfT $dots/x/xinitrc ~/.xinitrc
 ln -sfT $dots/x/xmodmap ~/.xmodmap
 ln -sfT $dots/x/Xresources ~/.Xresources
+
+ln -sfT $dots/look/fonts ~/.fonts
