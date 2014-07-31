@@ -1,0 +1,43 @@
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
+ZSH_CUSTOM=$HOME/.config/themes
+ZSH_THEME="ryan"
+
+CASE_SENSITIVE="true"
+
+DISABLE_AUTO_TITLE="true"
+
+COMPLETION_WAITING_DOTS="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git git-extras pip systemd npm virtualenvwrapper fasd rvm)
+
+source $ZSH/oh-my-zsh.sh
+
+# Each shell has it's own history.
+setopt no_share_history
+
+alias tmux="tmux -2"
+alias at="tmux attach -t "
+alias load="tmuxifier load-session "
+alias v='f -e vim'
+alias c='fasd_cd -d'
+alias vim='TERM=xterm-termite vim'
+alias ssh='TERM=xterm ssh'  # Nobody knows about poor termite...
+
+# Filter based on what is already typed.
+bindkey "^P" up-line-or-search
+bindkey "^N" down-line-or-search
+
+export PATH=$PATH:~/bin
+export PATH=$PATH:~/.tmuxifier/bin
+export PATH=$PATH:~/development/android-sdk-linux/platform-tools/
+export PATH=$PATH:/usr/local/heroku/bin
+export PATH=$PATH:~/.rvm/bin
+
+eval "$(tmuxifier init -)"
+eval `dircolors ~/.dir_colors/dircolors.256dark`
+eval "$(fasd --init posix-alias zsh-hook)"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

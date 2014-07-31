@@ -1,0 +1,23 @@
+export EDITOR=vim
+if [[ $TERM == "xterm-termite" ]] ; then
+    eval $(keychain --eval --agents ssh -Q --quiet ~/.ssh/id_rsa)
+fi
+
+# python virtualenv wrapper
+source /usr/bin/virtualenvwrapper.sh
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Projects
+export VIRTUALENVWRAPPER_PROJECT_FILENAME=.venv
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+
+# browser
+export BROWSER=firefox-nightly
+
+# tmux
+export TMUXIFIER_LAYOUT_PATH=~/.tmuxifier_layouts
+
+# bspwm
+export PANEL_FIFO=/tmp/panel-fifo
+export PANEL_HEIGHT=24
+export PANEL_FONT_FAMILY="-*-terminus-medium-r-normal-*-12-*-*-*-c-*-*-1"
+export BSPWM_SOCKET=/tmp/bspwm-socket
