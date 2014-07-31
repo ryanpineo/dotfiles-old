@@ -1,0 +1,10 @@
+# vim: set ft=conkyrc:
+short_units yes
+background yes
+out_to_console yes
+out_to_x no
+# Update interval in seconds
+update_interval 3
+
+TEXT
+S ${execi 1 ./panel_volume}   ${execi 1 ./panel_battery}  ${execi 1 ./panel_clock}                     

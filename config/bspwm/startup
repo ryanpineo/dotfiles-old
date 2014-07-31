@@ -1,0 +1,11 @@
+#! /bin/sh
+
+sleep 1
+xcape -t 300 &
+stalonetray &
+insync start &
+nm-applet &
+redshift-gtk &
+thunderbird &
+zeal &
+keepassx ~/drive/.p/main.kdb

@@ -1,0 +1,88 @@
+# vim: set noexpandtab:
+
+# Close window
+alt + shift + x
+	bspc window -c
+
+# Presel window for splitting
+alt + ctrl + {h,j,k,l}
+	bspc window -p {left,down,up,right}
+
+# Toggle floating or fullscreen mode
+alt + {_,shift +} t
+	bspc window -t {floating,fullscreen}
+
+# Select or move window to desktop
+alt + {_, shift + }{1-9,0}
+	bspc {desktop -f, window -d} ^{1-9,10}
+
+# Select or move window
+alt + {_, shift +}{h,j,k,l}
+	bspc window -{f,s} {left,down,up,right}
+
+# Move current window to largest space
+alt + Return
+	bspc window -s biggest
+
+# Mirror and flip leaves of tree
+alt + {comma,period}
+	bspc desktop -F {horizontal,vertical}
+
+# Rotate leaves of tree
+alt + shift + {comma,period}
+	bspc desktop -R {90,270}
+
+# Move current window to largest space
+alt + Return
+	bspc window -s biggest
+
+# Go to last desktop
+alt + Tab
+	bspc desktop -f last
+
+# Mouse
+super + button{1-3}
+	bspc pointer -g {move,resize_corner,resize_side}
+
+super + !button{1-3}
+	bspc pointer -t %i %i
+
+# Applications
+alt + shift + Return
+	termite
+
+# Dmenu with history
+alt + space
+	dmenu_run
+
+super + e
+	scratchpad email
+
+super + p
+	scratchpad keepassx
+
+super + k
+	scratchpad zeal
+
+# Special Keys
+Print
+	uscreenshot
+
+alt + Print
+	uscreenshot -s
+
+super + Print
+	scrot -q 100
+
+super + alt + Print
+	scrot -q 100 -s
+
+
+XF86AudioMute
+	amixer set Master toggle && killall -SIGUSR1 conky
+
+XF86AudioLowerVolume
+	amixer sset Master 5%- && killall -SIGUSR1 conky
+
+XF86AudioRaiseVolume
+	amixer sset Master 5%+ && killall -SIGUSR1 conky

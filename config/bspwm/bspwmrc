@@ -1,0 +1,19 @@
+#!/bin/sh
+
+bspc config border_width 2
+bspc config window_gap 4
+bspc config focus_follows_pointer true
+
+bspc config split_ratio 0.50
+
+bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -a INVISemail INVISkeepassx INVISzeal
+
+# Startup Shits
+~/.config/bspwm/panel/panel &
+~/.config/bspwm/startup &
+
+# Rules
+bspc rule -a Thunderbird desktop=INVISemail
+bspc rule -a zeal desktop=INVISzeal
+bspc rule -a keepassx desktop=INVISkeepassx
