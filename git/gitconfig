@@ -1,0 +1,26 @@
+[user]
+	name = Ryan Pineo
+	email = ryanpineo@gmail.com
+[core]
+	autocrlf = input
+	excludesfile = ~/.gitignore_global
+	safecrlf = true
+[diff]
+	tool = vimdiff
+[push]
+	default = simple
+[difftool]
+	prompt = false
+[alias]
+	d = difftool
+    co = checkout
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	br = branch
+[mergetool "fugitive"]
+	cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+[merge]
+	tool = fugitive
+[github]
+	user = RyanPineo
+[init]
+	templatedir = ~/.git_template
