@@ -1,0 +1,147 @@
+# This file is derived from https://github.com/SebastianMnk/solarized-i3-dotfiles
+# Initial stuff
+out_to_x no
+own_window no
+out_to_console yes
+background no
+max_text_width 0
+
+# Update interval in seconds
+update_interval 3
+
+# The number of times Conky will update before quitting. 0 = forever
+total_run_times 0
+
+# Shorten unsits to single character ('G' instead of 'GiB')
+short_units yes
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+# use_spacer should have an argument of left, right, or none
+use_spacer left
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+# Less flickering.. hopefully..
+double_buffer yes
+
+
+# Stuff after 'TEXT' goes to the bar!
+TEXT
+[
+# cpu [cores]
+    {"full_text":"","color":"\#859900","separator":false,"separator_block_width":6},\
+    {"full_text":"${if_match $cpu>70} ▣ $cpu% [${cpu cpu1}.${cpu cpu2}.${cpu cpu3}.${cpu cpu4}]","color":"\#dc322f"},\
+    {"full_text":"${else}"},\
+    {"full_text":"${if_match $cpu>40} ▣ $cpu% [${cpu cpu1}.${cpu cpu2}.${cpu cpu3}.${cpu cpu4}]","color":"\#b58900"},\
+    {"full_text":"${else}"},\
+    {"full_text":"${if_match $cpu<=40} ▣ $cpu% [${cpu cpu1}.${cpu cpu2}.${cpu cpu3}.${cpu cpu4}]","color":"\#859900"},\
+    {"full_text":"${else}"},\
+    {"full_text":"${endif}${endif}${endif}"},\
+
+# space left in root directory
+    {"full_text":"","color":"\#859900","separator":false,"separator_block_width":6},\
+    {"full_text":"${if_match ${fs_free_perc /}<15}📁 ${fs_free /}","color":"\#dc322f"},\
+    {"full_text":"${else}"},\
+    {"full_text":"${if_match ${fs_free_perc /}<50}📁 ${fs_free /}","color":"\#b58900"},\
+    {"full_text":"${else}"},\
+    {"full_text":"${if_match ${fs_free_perc /}>=50}📁 ${fs_free /}","color":"\#859900"},\
+    {"full_text":"${else}"},\
+    {"full_text":"${endif}${endif}${endif}"},\
+
+# space left in home directory
+    {"full_text":"","color":"\#859900","separator":false,"separator_block_width":6},\
+    {"full_text":"${if_match ${fs_free_perc /home}<15}📁 ${fs_free /home}","color":"\#dc322f"},\
+    {"full_text":"${else}"},\
+    {"full_text":"${if_match ${fs_free_perc /home}<50}📁 ${fs_free /home}","color":"\#b58900"},\
+    {"full_text":"${else}"},\
+    {"full_text":"${if_match ${fs_free_perc /home}>=50}📁 ${fs_free /home}","color":"\#859900"},\
+    {"full_text":"${else}"},\
+    {"full_text":"${endif}${endif}${endif}"},\
+
+# space left in misc directory
+    {"full_text":"","color":"\#859900","separator":false,"separator_block_width":6},\
+    {"full_text":"${if_match ${fs_free_perc /misc}<15}📁 ${fs_free /misc}","color":"\#dc322f"},\
+    {"full_text":"${else}"},\
+    {"full_text":"${if_match ${fs_free_perc /misc}<50}📁 ${fs_free /misc}","color":"\#b58900"},\
+    {"full_text":"${else}"},\
+    {"full_text":"${if_match ${fs_free_perc /misc}>=50}📁 ${fs_free /misc}","color":"\#859900"},\
+    {"full_text":"${else}"},\
+    {"full_text":"${endif}${endif}${endif}"},\
+
+# used ram in percentage
+    {"full_text":"","color":"\#859900","separator":false,"separator_block_width":6},\
+    {"full_text":"${if_match ${memperc}>80}🐏 ${memperc}%","color":"\#dc322f"},\
+    {"full_text":"${else}"},\
+    {"full_text":"${if_match ${memperc}>50}🐏 ${memperc}%","color":"\#b58900"},\
+    {"full_text":"${else}"},\
+    {"full_text":"${if_match ${memperc}<=50}🐏 ${memperc}%","color":"\#859900"},\
+    {"full_text":"${else}"},\
+    {"full_text":"${endif}${endif}${endif}"},\
+
+# temperature in celcius
+    {"full_text":"","color":"\#859900","separator":false,"separator_block_width":6},\
+    {"full_text":"${if_match ${hwmon 0 temp 1}<50} 🌡${hwmon 0 temp 1}°C ","color":"\#859900"},\
+    {"full_text":"${else}"},\
+    {"full_text":"${if_match ${hwmon 0 temp 1}<65} 🌡${hwmon 0 temp 1}°C ","color":"\#b58900"},\
+    {"full_text":"${else}"},\
+    {"full_text":"${if_match ${hwmon 0 temp 1}>=65} 🌡${hwmon 0 temp 1}°C ","color":"\#dc322f"},\
+    {"full_text":"${else}"},\
+    {"full_text":"${endif}${endif}${endif}"},\
+
+# wifi strength
+    ${if_empty ${exec ip addr show wlp2s0 | grep -P "DOWN"}}
+        # If the interface has no IP and the interface is up then we are trying to connect.
+        ${if_empty ${exec ip addr show wlp2s0 | grep -P "\d+.\d+"}}
+            {"full_text":"Connecting ${wireless_essid wlp2s0}","color":"\#6c71c4"},\
+        ${else}
+            {"full_text":"","color":"\#268bd2","separator":false,"separator_block_width":6},\
+            {"full_text":"${if_match ${wireless_link_qual_perc wlp2s0}<31}🌎 ${wireless_link_qual_perc wlp2s0}% ${wireless_essid wlp2s0} ","color":"\#dc322f"},\
+            {"full_text":"${else}"},\
+            {"full_text":"${if_match ${wireless_link_qual_perc wlp2s0}<56}🌎 ${wireless_link_qual_perc wlp2s0}% ${wireless_essid wlp2s0} ","color":"\#b58900"},\
+            {"full_text":"${else}"},\
+            {"full_text":"${if_match ${wireless_link_qual_perc wlp2s0}>=56}🌎 ${wireless_link_qual_perc wlp2s0}% ${wireless_essid wlp2s0} ","color":"\#859900"},\
+            {"full_text":"${else}"},\
+            {"full_text":"${endif}${endif}${endif}"},\
+        ${endif}
+    ${else}
+        {"full_text":"Offline","color":"\#dc322f"},\
+    ${endif}
+
+
+# volume in percentage
+    # volume is unmuted
+    ${if_match "${exec amixer get Master -M | grep -o "\[on]"}"=="[on]"}
+        {"full_text":" ♪ ${exec amixer get Master -M | grep -oE "[[:digit:]]*%"} ","color":"\#268bd2"},\
+    # volume is muted
+    ${else}
+        {"full_text": " 🔇 0% ", "color":"\#dc322f"},\
+    ${endif}
+
+# battery left in percentage | checks if AC is plugged in order to change the icon between AC and battery.
+    ${if_existing /sys/class/power_supply/ADP1/online 0}
+        {"full_text":" 🔋 ","color":"\"859900","separator":false,"separator_block_width":6},\
+        {"full_text":"${if_match ${battery_percent BAT1}<20}${battery_percent BAT1}% ${battery_time BAT1}","color":"\#dc322f"},\
+        {"full_text":"${else}"},\
+        {"full_text":"${if_match ${battery_percent BAT1}<50}${battery_percent BAT1}% ${battery_time BAT1}","color":"\#b58900"},\
+        {"full_text":"${else}"},\
+        {"full_text":"${if_match ${battery_percent BAT1}>=50}${battery_percent BAT1}% ${battery_time BAT1}","color":"\#859900"},\
+        {"full_text":"${else}"},\
+        {"full_text":"${endif}${endif}${endif}"},\
+    ${else}
+        {"full_text":" 🔌 ${battery_percent BAT1}% ${battery_time BAT1} ","color":"\#859900"},\
+    ${endif}
+
+# date
+    {"full_text":" 📅  ${time %a %d %b} ", "color": "\#6c71c4"},\
+
+# time
+    {"full_text":" 🕑 ${time %H:%M}","color":"\#6c71c4"},\
+
+# free extra space! because who can say no to free space!
+    {"full_text":" "}
+],
