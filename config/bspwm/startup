@@ -9,3 +9,5 @@ redshift-gtk &
 thunderbird &
 zeal &
 keepassx ~/drive/.p/main.kdb
+
+wmname LG3D &  # Fix java graphics bug
