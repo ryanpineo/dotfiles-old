@@ -7,4 +7,4 @@ out_to_x no
 update_interval 3
 
 TEXT
-S ${execi 1 ./panel_volume}   ${execi 1 ./panel_battery}  ${execi 1 ./panel_clock}                     
+S ${execi 1 ./panel_volume} | ${execi 1 ./panel_battery} | ${execi 1 ./panel_clock}
