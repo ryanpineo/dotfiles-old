@@ -25,3 +25,4 @@ ln -sfT $dots/x/xmodmap ~/.xmodmap
 ln -sfT $dots/x/Xresources ~/.Xresources
 
 ln -sfT $dots/look/fonts ~/.fonts
+ln -sfT $dots/look/dir_colors ~/.dir_colors
