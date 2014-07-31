@@ -1,6 +1,6 @@
 #! /bin/bash
 
-dots=~/dots
+dots=~/dotfiles
 
 mkdir -p ~/.config
 
