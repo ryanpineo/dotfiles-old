@@ -19,6 +19,7 @@ ln -sfT $dots/tmux/tmuxifier_layouts ~/.tmuxifier_layouts
 
 ln -sfT $dots/zsh/zshenv ~/.zshenv
 ln -sfT $dots/zsh/zshrc ~/.zshrc
+ln -sfT $dots/zsh/zsh_themes ~/.zsh_themes
 
 ln -sfT $dots/x/xinitrc ~/.xinitrc
 ln -sfT $dots/x/xmodmap ~/.xmodmap
