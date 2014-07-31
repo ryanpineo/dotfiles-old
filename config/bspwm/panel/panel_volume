@@ -8,4 +8,10 @@ state() {
     amixer get Master | sed -n 's/^.*\[\(o[nf]\+\)]$/\1/p' | uniq
 }
 
-echo "Volume: `state` `level`"
+if [[ `state` == on ]]; then
+    icon="on"
+else
+    icon="%{F#FFFF0000}off%{F-}"
+fi
+
+echo -n "Volume: $icon `level`"
