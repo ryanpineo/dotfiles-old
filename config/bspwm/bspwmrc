@@ -17,3 +17,4 @@ bspc monitor -a INVISemail INVISkeepassx INVISzeal
 bspc rule -a Thunderbird desktop=INVISemail
 bspc rule -a zeal desktop=INVISzeal
 bspc rule -a keepassx desktop=INVISkeepassx
+bspc rule -a Skype desktop=^2
