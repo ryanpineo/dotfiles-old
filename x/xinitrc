@@ -6,7 +6,7 @@ xsetroot -cursor_name left_ptr &
 # set key board repeat rate
 xset r rate 200 40 &
 xmodmap ~/.xmodmap &
-hsetroot -fill /home/ryan/pics/wallpapers/arch-linux-rainbow-solarized.png &
+hsetroot -fill /home/ryan/drive/pics/wallpapers/arch-linux-rainbow-solarized.png &
 
 sxhkd -f 30 &
 exec bspwm
