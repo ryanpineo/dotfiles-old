@@ -1,0 +1,8 @@
+# vim: set ft=muttrc:
+
+set from = "ryanpineo@gmail.com"
+set sendmail = "/usr/bin/msmtp -a personal"
+set mbox      = "+personal/archive"
+set postponed = "+personal/drafts"
+set sendmail_wait = 0
+unset record

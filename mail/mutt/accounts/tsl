@@ -1,0 +1,8 @@
+# vim: set ft=muttrc:
+
+# Default inbox.
+set spoolfile = "+tsl/INBOX"
+
+# Other special folders.
+set mbox      = "+tsl/archive"
+set postponed = "+tsl/drafts"

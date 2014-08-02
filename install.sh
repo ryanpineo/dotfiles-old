@@ -30,3 +30,7 @@ ln -sfT $dots/x/Xresources ~/.Xresources
 
 ln -sfT $dots/look/fonts ~/.fonts
 ln -sfT $dots/look/dir_colors ~/.dir_colors
+
+ln -sfT $dots/mail/mutt ~/.mutt
+ln -sfT $dots/mail/offlineimaprc ~/.offlineimaprc
+ln -sfT $dots/mail/msmtprc ~/.msmtprc

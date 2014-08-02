@@ -1,0 +1,69 @@
+[general]
+ui = TTY.TTYUI
+accounts = RyanPineoGmail,TSL
+pythonfile=~/.mutt/offlineimap.py
+fsync = False
+
+[Account RyanPineoGmail]
+localrepository = RyanPineoGmail-Local
+remoterepository = RyanPineoGmail-Remote
+status_backend = sqlite
+
+[Repository RyanPineoGmail-Local]
+type = Maildir
+localfolders = ~/.mail/personal
+nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
+                            'sent':    '[Gmail]/Sent Mail',
+                            'flagged': '[Gmail]/Starred',
+                            'trash':   '[Gmail]/Trash',
+                            'archive': '[Gmail]/All Mail',
+                            }.get(folder, folder)
+
+[Repository RyanPineoGmail-Remote]
+maxconnections = 1
+type = Gmail
+remoteuser = ryanpineo@gmail.com
+remotepasseval = get_email_password('gmail')
+realdelete = no
+nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
+                            '[Gmail]/Sent Mail': 'sent',
+                            '[Gmail]/Starred':   'flagged',
+                            '[Gmail]/Trash':     'trash',
+                            '[Gmail]/All Mail':  'archive',
+                            }.get(folder, folder)
+folderfilter = lambda folder: folder not in ['[Gmail]/Trash',
+                                             '[Gmail]/Important',
+                                             '[Gmail]/Spam',
+                                             ]
+
+[Account TSL]
+localrepository = TSL-Local
+remoterepository = TSL-Remote
+status_backend = sqlite
+
+[Repository TSL-Local]
+type = Maildir
+localfolders = ~/.mail/tsl
+nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
+                            'sent':    '[Gmail]/Sent Mail',
+                            'flagged': '[Gmail]/Starred',
+                            'trash':   '[Gmail]/Trash',
+                            'archive': '[Gmail]/All Mail',
+                            }.get(folder, folder)
+
+[Repository TSL-Remote]
+maxconnections = 1
+type = Gmail
+remoteuser = ry@tsl.io
+remotepasseval = get_email_password('tsl')
+realdelete = no
+nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
+                            '[Gmail]/Sent Mail': 'sent',
+                            '[Gmail]/Starred':   'flagged',
+                            '[Gmail]/Trash':     'trash',
+                            '[Gmail]/All Mail':  'archive',
+                            }.get(folder, folder)
+folderfilter = lambda folder: folder not in ['[Gmail]/Trash',
+                                             '[Gmail]/Important',
+                                             '[Gmail]/Spam',
+                                             ]
