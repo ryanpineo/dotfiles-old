@@ -8,5 +8,7 @@ xset r rate 200 40 &
 xmodmap ~/.xmodmap &
 hsetroot -fill /home/ryan/drive/pics/wallpapers/arch-linux-rainbow-solarized.png &
 
-sxhkd -f 30 &
+eval $(gpg-agent --daemon) &
+
+sxhkd -f 20 &
 exec bspwm
