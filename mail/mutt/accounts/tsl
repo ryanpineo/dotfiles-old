@@ -1,8 +1,8 @@
 # vim: set ft=muttrc:
 
-# Default inbox.
-set spoolfile = "+tsl/INBOX"
-
-# Other special folders.
+set from = "ry@tsl.io"
+set sendmail = "/usr/bin/msmtp -a tsl"
 set mbox      = "+tsl/archive"
 set postponed = "+tsl/drafts"
+set sendmail_wait = 0
+unset record

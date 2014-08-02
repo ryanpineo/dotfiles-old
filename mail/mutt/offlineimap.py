@@ -1,6 +1,7 @@
 #! /usr/bin/python
 
 import subprocess
+import sys
 
 
 def get_email_password(name):
@@ -11,3 +12,6 @@ def get_email_password(name):
     output = subprocess.check_output(command, shell=True,
                                      stderr=subprocess.STDOUT)
     return output.strip().decode('ascii')
+
+if __name__ == '__main__':
+    print(get_email_password(sys.argv[1]))
