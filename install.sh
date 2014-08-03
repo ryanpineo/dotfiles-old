@@ -34,3 +34,4 @@ ln -sfT $dots/look/dir_colors ~/.dir_colors
 ln -sfT $dots/mail/mutt ~/.mutt
 ln -sfT $dots/mail/offlineimaprc ~/.offlineimaprc
 ln -sfT $dots/mail/msmtprc ~/.msmtprc
+ln -sfT $dots/mail/goobook ~/.goobook

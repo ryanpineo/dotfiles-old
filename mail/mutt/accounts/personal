@@ -6,3 +6,6 @@ set mbox      = "+personal/archive"
 set postponed = "+personal/drafts"
 set sendmail_wait = 0
 unset record
+
+set query_command="goobook -c /home/ryan/.goobook/goobookrc-personal query '%s'"
+bind editor <Tab> complete-query

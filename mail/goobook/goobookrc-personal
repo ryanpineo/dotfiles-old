@@ -1,0 +1,4 @@
+[DEFAULT]
+email: ryanpineo@gmail.com
+passwordeval: ~/.mutt/offlineimap.py gmail
+cache_filename: ~/.goobook/goobook-cache-personal

@@ -14,4 +14,5 @@ def get_email_password(name):
     return output.strip().decode('ascii')
 
 if __name__ == '__main__':
-    print(get_email_password(sys.argv[1]))
+    if len(sys.argv) == 2:
+        print(get_email_password(sys.argv[1]))
