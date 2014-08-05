@@ -125,6 +125,9 @@ bind pager G  bottom
 
 bind pager R  group-reply
 
+# View attachments properly.
+bind attach <return> view-mailcap
+
 
 # Compose View Options -------------------------------
 set realname = "Ryan Pineo"          # who am i?
