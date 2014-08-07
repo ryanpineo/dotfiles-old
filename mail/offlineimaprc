@@ -3,11 +3,14 @@ ui = TTY.TTYUI
 accounts = RyanPineoGmail,TSL
 pythonfile=~/.mutt/offlineimap.py
 fsync = False
+maxsyncaccounts = 2
 
 [Account RyanPineoGmail]
 localrepository = RyanPineoGmail-Local
 remoterepository = RyanPineoGmail-Remote
 status_backend = sqlite
+autorefresh = 10
+quick = 5
 
 [Repository RyanPineoGmail-Local]
 type = Maildir
@@ -40,6 +43,8 @@ folderfilter = lambda folder: folder not in ['[Gmail]/Trash',
 localrepository = TSL-Local
 remoterepository = TSL-Remote
 status_backend = sqlite
+autorefresh = 10
+quick = 5
 
 [Repository TSL-Local]
 type = Maildir
