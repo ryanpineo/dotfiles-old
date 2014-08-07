@@ -58,11 +58,18 @@ alt + space
 super + e
 	scratchpad email
 
-super + p
+super shift + p
 	scratchpad keepassx
+
+super + p
+	passmenu
 
 super + k
 	scratchpad zeal
+
+# Switch to gaming config
+super + g
+	killall sxhkd; sxhkd /home/ryan/.config/sxhkd/gamingrc
 
 # Special Keys
 Print
