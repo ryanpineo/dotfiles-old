@@ -69,7 +69,7 @@ super + k
 
 # Switch to gaming config
 super + g
-	killall sxhkd; sxhkd /home/ryan/.config/sxhkd/gamingrc
+	killall sxhkd; sxhkd -c /home/ryan/.config/sxhkd/gamingrc
 
 # Special Keys
 Print
