@@ -6,7 +6,6 @@ stalonetray &
 insync start &
 nm-applet &
 redshift-gtk &
-thunderbird &
 zeal &
 wmname LG3D &  # Fix java graphics bug
 keepassx ~/drive/.p/main.kdb &
