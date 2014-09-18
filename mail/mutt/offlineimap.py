@@ -5,7 +5,7 @@ import sys
 
 
 def get_email_password(name):
-    name_path_map = {'gmail': 'email/ryanpineo-gmail.com',
+    name_path_map = {'gmail': 'email/offlineimap-ryanpineo-gmail.com',
                      'tsl': 'tsl/email'}
 
     command = 'pass {}'.format(name_path_map[name])
