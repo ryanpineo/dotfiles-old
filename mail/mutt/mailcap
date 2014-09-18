@@ -1,1 +1,3 @@
 text/html; xdg-open %s
+image/jpeg; xdg-open %s
+image/png; xdg-open %s
