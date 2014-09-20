@@ -20,10 +20,6 @@ alt + {_, shift + }{1-9,0}
 alt + {_, shift +}{h,j,k,l}
 	bspc window -{f,s} {left,down,up,right}
 
-# Move current window to largest space
-alt + Return
-	bspc window -s biggest
-
 # Mirror and flip leaves of tree
 alt + {comma,period}
 	bspc desktop -F {horizontal,vertical}
