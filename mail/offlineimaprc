@@ -1,16 +1,15 @@
 [general]
 ui = TTY.TTYUI
-accounts = RyanPineoGmail,TSL
+accounts = RyanPineoGmail,TSL,School
 pythonfile=~/.mutt/offlineimap.py
 fsync = False
-maxsyncaccounts = 2
+maxsyncaccounts = 3
 
 [Account RyanPineoGmail]
 localrepository = RyanPineoGmail-Local
 remoterepository = RyanPineoGmail-Remote
 status_backend = sqlite
-autorefresh = 10
-quick = 5
+autorefresh = 5
 
 [Repository RyanPineoGmail-Local]
 type = Maildir
@@ -43,8 +42,7 @@ folderfilter = lambda folder: folder not in ['[Gmail]/Trash',
 localrepository = TSL-Local
 remoterepository = TSL-Remote
 status_backend = sqlite
-autorefresh = 10
-quick = 5
+autorefresh = 30
 
 [Repository TSL-Local]
 type = Maildir
@@ -52,7 +50,6 @@ localfolders = ~/.mail/tsl
 nametrans = lambda folder: {'drafts':  '[Gmail]/Drafts',
                             'sent':    '[Gmail]/Sent Mail',
                             'flagged': '[Gmail]/Starred',
-                            'trash':   '[Gmail]/Trash',
                             'archive': '[Gmail]/All Mail',
                             }.get(folder, folder)
 
@@ -65,10 +62,36 @@ realdelete = no
 nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
                             '[Gmail]/Sent Mail': 'sent',
                             '[Gmail]/Starred':   'flagged',
-                            '[Gmail]/Trash':     'trash',
                             '[Gmail]/All Mail':  'archive',
                             }.get(folder, folder)
 folderfilter = lambda folder: folder not in ['[Gmail]/Trash',
                                              '[Gmail]/Important',
                                              '[Gmail]/Spam',
                                              ]
+
+[Account School]
+localrepository = School-Local
+remoterepository = School-Remote
+status_backend = sqlite
+autorefresh = 10
+
+[Repository School-Local]
+type = Maildir
+localfolders = ~/.mail/school
+nametrans = lambda folder: {'drafts': 'Drafts',
+                            'sent': 'Sent Items'
+                            }.get(folder, folder)
+
+[Repository School-Remote]
+maxconnections = 1
+type = IMAP
+ssl = yes
+remotehost = outlook.office365.com
+remoteuser = pineor@sheridancollege.ca
+remotepasseval = get_email_password('school')
+remoteport = 993
+realdelete = no
+nametrans = lambda folder: {'Drafts': 'drafts',
+                            'Sent Items': 'sent'
+                            }.get(folder, folder)
+folderfilter = lambda folder: folder in ['INBOX', 'Drafts', 'Sent Items', 'archive']

@@ -58,6 +58,7 @@ source ~/.mutt/accounts/personal
 # Switch accounts
 folder-hook persona/* source ~/.mutt/accounts/personal
 folder-hook tsl/*     source ~/.mutt/accounts/tsl
+folder-hook school/*     source ~/.mutt/accounts/school
 
 # Mailboxes to show in the sidebar.
 mailboxes +personal/INBOX \
@@ -65,6 +66,10 @@ mailboxes +personal/INBOX \
           +personal/sent \
           +personal/drafts \
           +personal/Receipts \
+          +school/INBOX \
+          +school/archive \
+          +school/sent \
+          +school/drafts \
           +tsl/INBOX \
           +tsl/archive \
           +tsl/sent \

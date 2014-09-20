@@ -6,7 +6,8 @@ import sys
 
 def get_email_password(name):
     name_path_map = {'gmail': 'email/offlineimap-ryanpineo-gmail.com',
-                     'tsl': 'tsl/email'}
+                     'tsl': 'tsl/email',
+                     'school': 'sheridan/sso'}
 
     command = 'pass {}'.format(name_path_map[name])
     output = subprocess.check_output(command, shell=True,

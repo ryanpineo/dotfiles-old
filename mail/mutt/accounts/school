@@ -1,0 +1,8 @@
+# vim: set ft=muttrc:
+
+set from = "pineor@sheridancollege.ca"
+set sendmail = "/usr/bin/msmtp -a school"
+set mbox      = "+school/archive"
+set postponed = "+school/drafts"
+set sendmail_wait = 0
+set record = "+school/sent"
