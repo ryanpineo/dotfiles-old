@@ -12,7 +12,7 @@ def get_email_password(name):
     command = 'pass {}'.format(name_path_map[name])
     output = subprocess.check_output(command, shell=True,
                                      stderr=subprocess.STDOUT)
-    return output.strip().decode('ascii')
+    return output.split('\n')[0].strip().decode('ascii')
 
 if __name__ == '__main__':
     if len(sys.argv) == 2:
