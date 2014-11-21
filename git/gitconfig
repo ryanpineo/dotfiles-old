@@ -2,7 +2,7 @@
 	name = Ryan Pineo
 	email = ryanpineo@gmail.com
 [core]
-	autocrlf = input
+	autocrlf = false
 	excludesfile = ~/.gitignore_global
 	safecrlf = true
 [diff]
