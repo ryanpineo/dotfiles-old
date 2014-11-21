@@ -4,6 +4,10 @@
 alt + shift + x
 	bspc window -c
 
+# Kill window
+alt + shift + q
+	bspc window -k
+
 # Presel window for splitting
 alt + ctrl + {h,j,k,l}
 	bspc window -p {left,down,up,right}
