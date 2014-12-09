@@ -27,6 +27,7 @@ type = Gmail
 remoteuser = ryanpineo@gmail.com
 remotepasseval = get_email_password('gmail')
 realdelete = no
+idlefolders = ['INBOX']
 nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
                             '[Gmail]/Sent Mail': 'sent',
                             '[Gmail]/Starred':   'flagged',
@@ -59,6 +60,7 @@ type = Gmail
 remoteuser = ry@tsl.io
 remotepasseval = get_email_password('tsl')
 realdelete = no
+idlefolders = ['INBOX']
 nametrans = lambda folder: {'[Gmail]/Drafts':    'drafts',
                             '[Gmail]/Sent Mail': 'sent',
                             '[Gmail]/Starred':   'flagged',
@@ -91,6 +93,7 @@ remoteuser = pineor@sheridancollege.ca
 remotepasseval = get_email_password('school')
 remoteport = 993
 realdelete = no
+idlefolders = ['INBOX']
 nametrans = lambda folder: {'Drafts': 'drafts',
                             'Sent Items': 'sent'
                             }.get(folder, folder)
