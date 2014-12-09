@@ -75,6 +75,11 @@ mailboxes +personal/INBOX \
           +tsl/sent \
           +tsl/drafts \
 
+# Quick switch inboxes
+macro index,pager gtp <change-folder>=personal/INBOX<return>
+macro index,pager gtt <change-folder>=tsl/INBOX<return>
+macro index,pager gts <change-folder>=school/INBOX<return>
+
 
 # Index View Options ---------------------------------
 set date_format = "%m/%d"
