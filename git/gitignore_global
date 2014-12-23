@@ -57,3 +57,4 @@ tags
 .classpath
 .settings/
 .env
+.projections.json
