@@ -43,3 +43,7 @@ alias at="tmux attach -t "
 alias load="tmuxifier load-session "
 alias v='f -e vim'
 alias c='fasd_cd -d'
+
+alias sc-start="sudo systemctl start"
+alias sc-restart="sudo systemctl restart"
+alias sc-stop="sudo systemctl stop"
