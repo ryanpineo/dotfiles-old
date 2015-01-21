@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 # Auto completion
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'  # Complete from middle of words
 autoload -U compinit
 compinit
 
