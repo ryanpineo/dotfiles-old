@@ -18,7 +18,7 @@ export EDITOR=vim
 export BROWSER=firefox
 
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Projects
+export PROJECT_HOME=$HOME/projects
 export VIRTUALENVWRAPPER_PROJECT_FILENAME=.venv
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 source /usr/bin/virtualenvwrapper.sh
