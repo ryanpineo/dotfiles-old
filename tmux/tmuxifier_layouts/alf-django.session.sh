@@ -2,15 +2,11 @@
 
 session_root "$HOME/projects/tsl/alf/alf-django"
 
-if initialize_session "alf"; then
+if initialize_session "alf-django"; then
 
   new_window "Server"
   run_cmd "./manage.py runserver"
-  split_h 50
-  run_cmd "cd transform; grunt"
-
   new_window "Test"
-
   new_window "Vim"
 
 fi
