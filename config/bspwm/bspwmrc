@@ -14,6 +14,7 @@ bspc monitor -a INVISemail INVISkeepassx INVISzeal
 # Startup Shits
 ~/.config/bspwm/panel/panel &
 ~/.config/bspwm/startup &
+sxhkd &
 
 # Rules
 bspc rule -a Thunderbird desktop=INVISemail

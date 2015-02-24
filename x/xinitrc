@@ -8,7 +8,4 @@ xset r rate 200 40 &
 xmodmap ~/.xmodmap &
 hsetroot -fill /home/ryan/drive/pics/wallpapers/winter-berries.png &
 
-eval $(gpg-agent --daemon) &
-
-sxhkd -f 20 &
 exec bspwm
