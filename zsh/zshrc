@@ -31,7 +31,11 @@ bindkey "^N" down-line-or-search
 
 # Automaticly activate virtualenvs
 auto_venv() {
-    test -e .venv && workon "$(cat .venv)"
+    if [ -e .venv ]; then
+        if [ "$(cat .venv)" != "$(basename "$VIRTUAL_ENV")" ]; then
+            workon "$(cat .venv)"
+        fi
+    fi
 }
 add-zsh-hook chpwd auto_venv
 
