@@ -1,6 +1,6 @@
 #! /bin/bash
 
-source $(dirname $0)/config
+source "$(dirname "$0")/config"
 
 while read -r line ; do
     case $line in
@@ -17,7 +17,7 @@ while read -r line ; do
             while [ $# -gt 0 ] ; do
                 item=$1
                 name=${item#?}
-                if ! [[ $name =~ "INVIS" ]]; then
+                if [[ ! $name =~ INVIS ]] && [[ ! $name =~ Desktop ]]; then
                     case $item in
                         [OFU]*)
                             # active desktop
